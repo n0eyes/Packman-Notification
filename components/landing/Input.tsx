@@ -18,10 +18,11 @@ function Input() {
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
-    mutate(value, {
-      onSuccess: ({ data: { num } }) =>
-        router.replace(`/landing/appreciate/${num}`),
-    });
+    valid &&
+      mutate(value, {
+        onSuccess: ({ data: { num } }) =>
+          router.replace(`/landing/appreciate/${num}`),
+      });
   };
 
   if (error && error.response.status !== 400) return <Error />;
