@@ -16,8 +16,7 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         line-height: 1.6;
-        font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-            Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
         font-size: 62.5%;
         position:fixed;
         overflow: hidden;
