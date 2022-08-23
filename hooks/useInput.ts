@@ -1,19 +1,41 @@
 import { ChangeEvent, useCallback, useState } from "react";
 
+interface Validation {
+  isValid: boolean;
+  message: string;
+}
+
 export const useInput = (
-  initial: string,
-  validation?: boolean
-): [string, (e: ChangeEvent<HTMLInputElement>) => void, boolean] => {
+  initial: string
+): [string, (e: ChangeEvent<HTMLInputElement>) => void, Validation] => {
   const [value, setValue] = useState<string>(initial);
-  const [valid, setValid] = useState<boolean>(true);
+  const [validation, setValidation] = useState<Validation>({
+    isValid: true,
+    message: "",
+  });
 
   const changeHandler = useCallback(
     ({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
-      setValid(value === "" || /^\d{3}-\d{3,4}-\d{4}$/.test(value));
+      if (/^.*[-].*/.test(value)) {
+        setValidation({
+          isValid: false,
+          message: "'-'을 제외하고 작성해주세요",
+        });
+      } else if (value !== "" && !/^[0-9]+$/.test(value)) {
+        setValidation({
+          isValid: false,
+          message: "숫자만 입력해주세요",
+        });
+      } else {
+        setValidation({
+          isValid: true,
+          message: "",
+        });
+      }
       setValue(value);
     },
     []
   );
 
-  return [value, changeHandler, valid];
+  return [value, changeHandler, validation];
 };

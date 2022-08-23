@@ -12,12 +12,12 @@ import Loading from "../common/Loading";
 
 function Input() {
   const router = useRouter();
-  const [value, changeHandler, valid] = useInput("");
+  const [value, changeHandler, validation] = useInput("");
   const { mutate, isLoading, error } = useRegisterNotification();
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
-    valid &&
+    validation.isValid &&
       mutate(value, {
         onSuccess: ({ data: { num } }) =>
           router.replace(`/landing/appreciate/${num}`),
@@ -46,9 +46,7 @@ function Input() {
         />
         <StyledButton type="submit">제출 완료</StyledButton>
       </StyledForm>
-      {!valid && (
-        <StyledError>&apos;-&apos;를 포함하여 작성해주세요</StyledError>
-      )}
+      {!validation.isValid && <StyledError>{validation.message}</StyledError>}
     </StyledRoot>
   );
 }
