@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 
 export const GlobalStyle = createGlobalStyle`
     ${reset}
@@ -21,6 +21,18 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 62.5%;
         position:fixed;
         overflow: hidden;
+
+        @media screen and (max-width: 300px) {
+            font-size: 50%;
+        }
+
+        @media screen and (min-width: 768px) {
+            font-size: 80%;
+        }
+
+        @media screen and (min-width: 1024px) and (min-height: 1366px) {
+            font-size: 90%;
+        }
     }
 
     * {
@@ -68,7 +80,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 function createTransitionQuery() {
-  const properties = ['color', 'background-color', 'border-color'];
+  const properties = ["color", "background-color", "border-color"];
 
-  return properties.map((prop) => `${prop} 0.3s`).join(', ');
+  return properties.map((prop) => `${prop} 0.3s`).join(", ");
 }
