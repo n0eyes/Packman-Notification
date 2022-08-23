@@ -7,9 +7,8 @@ import { FONT_STYLES } from "../../styles/font";
 import { useInput } from "../../hooks/useInput";
 import { useRegisterNotification } from "../../hooks/queries/notification";
 import { useRouter } from "next/router";
-import Lottie from "lottie-react";
-import { lottie } from "../../public/assets";
 import Error from "../common/Error";
+import Loading from "../common/Loading";
 
 function Input() {
   const router = useRouter();
@@ -26,7 +25,7 @@ function Input() {
   };
 
   if (error && error.response.status !== 400) return <Error />;
-  if (isLoading) return <Lottie animationData={lottie} />;
+  if (isLoading) return <Loading />;
   return (
     <StyledRoot>
       <StyledLogo>
