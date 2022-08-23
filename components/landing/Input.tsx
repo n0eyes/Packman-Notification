@@ -38,14 +38,14 @@ function Input() {
           가장 먼저 알려드릴게요!
         </StyledDescription>
       </div>
-      <form onSubmit={submitHandler}>
+      <StyledForm onSubmit={submitHandler}>
         <StyledInput
           value={value}
           onChange={changeHandler}
           placeholder="출시 알림 받을 연락처를 입력해주세요"
         />
         <StyledButton type="submit">제출 완료</StyledButton>
-      </form>
+      </StyledForm>
       {!valid && (
         <StyledError>&apos;-&apos;를 포함하여 작성해주세요</StyledError>
       )}
@@ -80,6 +80,12 @@ const StyledDescription = styled.div`
   color: ${packmanColors.black};
 
   margin-top: 5rem;
+`;
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const StyledInput = styled.input`
