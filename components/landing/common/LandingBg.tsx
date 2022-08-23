@@ -1,11 +1,17 @@
-import React, { ReactNode } from 'react';
-import styled from 'styled-components';
+import React, { ReactNode, useEffect } from "react";
+import styled from "styled-components";
 
 interface LandingBg {
   children?: ReactNode;
 }
 
 function LandingBg({ children }: LandingBg) {
+  useEffect(() => {
+    if (window) {
+      alert(window.innerWidth);
+    }
+  }, []);
+
   return <StyledRoot>{children}</StyledRoot>;
 }
 
@@ -17,7 +23,7 @@ const StyledRoot = styled.div`
 
   position: relative;
 
-  background-image: url('/assets/png/landing-bg.png');
+  background-image: url("/assets/png/landing-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
 `;
