@@ -53,7 +53,7 @@ const StyledRoot = styled.main`
   align-items: center;
 
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%);
 `;
