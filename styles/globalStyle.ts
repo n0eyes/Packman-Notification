@@ -25,12 +25,12 @@ export const GlobalStyle = createGlobalStyle`
             font-size: 50%;
         }
 
-        @media screen and (min-width: 750px) {
-            font-size: 100%;
+        @media screen and (min-width: 744px) {
+            font-size: 90%;
         }
 
         @media screen and (min-width: 1024px) and (min-height: 1366px) {
-            font-size: 110%;
+            font-size: 100%;
         }
     }
 

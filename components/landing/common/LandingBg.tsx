@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 
 interface LandingBg {
@@ -6,12 +6,6 @@ interface LandingBg {
 }
 
 function LandingBg({ children }: LandingBg) {
-  useEffect(() => {
-    if (window) {
-      alert(window.innerWidth);
-    }
-  }, []);
-
   return <StyledRoot>{children}</StyledRoot>;
 }
 
