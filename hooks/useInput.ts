@@ -19,12 +19,17 @@ export const useInput = (
       if (/^.*[-].*/.test(value)) {
         setValidation({
           isValid: false,
-          message: "'-'을 제외하고 작성해주세요",
+          message: "'-'을 제외하고 작성해 주세요",
         });
       } else if (value !== "" && !/^[0-9]+$/.test(value)) {
         setValidation({
           isValid: false,
-          message: "숫자만 입력해주세요",
+          message: "숫자만 입력해 주세요",
+        });
+      } else if (value.length > 20) {
+        setValidation({
+          isValid: false,
+          message: "20자 이내로 입력해 주세요",
         });
       } else {
         setValidation({
