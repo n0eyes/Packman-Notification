@@ -26,11 +26,11 @@ export const GlobalStyle = createGlobalStyle`
         }
 
         @media screen and (min-width: 768px) {
-            font-size: 80%;
+            font-size: 100%;
         }
 
         @media screen and (min-width: 1024px) and (min-height: 1366px) {
-            font-size: 90%;
+            font-size: 110%;
         }
     }
 
