@@ -1,5 +1,4 @@
 import { css } from "styled-components";
-import { isIos } from "../utils/isIos";
 
 interface Font {
   size: number;
@@ -71,11 +70,12 @@ const getLineHeight = (type: Font["type"]) => {
   }
 };
 
-export const FONT = ({ size, weight, type }: Font) => css`
-  font-size: ${size / 10}rem;
-  font-weight: ${isIos() ? getFontWeight(weight) - 100 : getFontWeight(weight)};
-  line-height: ${getLineHeight(type) / 10}rem;
-`;
+export const FONT = ({ size, weight, type }: Font) =>
+  css`
+    font-size: ${size / 10}rem;
+    font-weight: ${getFontWeight(weight) - 100};
+    line-height: ${getLineHeight(type) / 10}rem;
+  `;
 
 export const FONT_STYLES = {
   DISPLAY1_LIGHT: FONT({ size: 24, weight: "L", type: "display1" }),
