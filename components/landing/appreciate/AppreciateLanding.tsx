@@ -32,10 +32,13 @@ function AppreciateLanding() {
           <StyledDescriptionLine2>
             되신 걸 축하드려요! 🎉
           </StyledDescriptionLine2>
-          <StyledSubDescription>
-            @ packman__official 을 태그하여 스토리에 올려주세요! 추첨을 통해
-            소정의 상품을 드립니다 🎁
-          </StyledSubDescription>
+          <StyledSubDescription1>
+            @ packman__official 을 태그하여
+          </StyledSubDescription1>
+          <StyledSubDescription2>스토리에 올려주세요!</StyledSubDescription2>
+          <StyledSubDescription2>
+            추첨을 통해 소정의 상품을 드립니다 🎁
+          </StyledSubDescription2>
         </StyledDescriptionWrapper>
       </StyledRoot>
     </LandingBg>
@@ -48,8 +51,6 @@ const StyledRoot = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  width: 27.3rem;
 
   position: absolute;
   top: 27%;
@@ -75,10 +76,12 @@ const StyledCharacter = styled.div`
 
 const StyledDescriptionWrapper = styled.div`
   margin-top: 3rem;
+  padding-left: 3rem;
 `;
 
 const StyledOrder = styled.span`
   ${FONT_STYLES.APPRECIATE_LINE1_BOLD}
+  color: ${packmanColors.black};
 
   border-bottom: 3px solid ${packmanColors.pmBlack};
 `;
@@ -88,10 +91,9 @@ const StyledDescriptionLine1 = styled.div`
 `;
 
 const StyledDescriptionLine2 = styled.div`
-  width: 100%;
   height: 4rem;
 
-  text-align: center;
+  white-space: nowrap;
 
   ${FONT_STYLES.APPRECIATE_LINE2_BOLD}
   color: ${packmanColors.black};
@@ -99,11 +101,25 @@ const StyledDescriptionLine2 = styled.div`
   margin-top: 0.5rem;
 `;
 
-const StyledSubDescription = styled.div`
-  width: 18.9rem;
+const StyledSubDescription1 = styled.div`
+  min-width: 20rem;
 
   ${FONT_STYLES.APPRECIATE_MEDIUM}
+
   color: ${packmanColors.black};
 
   margin-top: 1.3rem;
+`;
+
+const StyledSubDescription2 = styled.div`
+  min-width: 20rem;
+  box-sizing: border-box;
+  ${FONT_STYLES.APPRECIATE_MEDIUM}
+  letter-spacing: -0.035em;
+
+  color: ${packmanColors.black};
+
+  margin: 0;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 `;
